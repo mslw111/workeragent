@@ -11,6 +11,11 @@ Improvement 6: plan.focus_areas are threaded through to summarizer and writer.
 import sys
 import os
 
+# Force UTF-8 output so RSS article titles with special characters
+# don't crash on Windows terminals that default to cp1252.
+if hasattr(sys.stdout, "reconfigure"):
+    sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+
 try:
     from dotenv import load_dotenv
     load_dotenv()

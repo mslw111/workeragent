@@ -11,11 +11,15 @@ This produces real article content instead of navigation-menu noise.
 """
 
 import os
+import warnings
 from urllib.parse import urljoin
 
 import feedparser
 import requests
-from bs4 import BeautifulSoup
+from bs4 import BeautifulSoup, XMLParsedAsHTMLWarning
+
+# Suppress BeautifulSoup warning when RSS/XML content is parsed with html.parser
+warnings.filterwarnings("ignore", category=XMLParsedAsHTMLWarning)
 
 SOURCES_FILE      = os.path.join(os.path.dirname(os.path.dirname(__file__)), "sources.txt")
 TIMEOUT           = 15
