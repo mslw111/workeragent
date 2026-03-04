@@ -1,8 +1,10 @@
 # sources.txt
-# Add one URL per line.
-# Lines starting with # are ignored.
-# Example entries — replace with your own sources:
+# Add one URL per line. Lines starting with # are ignored.
+# Use direct RSS feed URLs for best results — especially when running
+# from cloud servers (GitHub Actions) where news homepages may block requests.
 
-https://www.bbc.com/news
-https://apnews.com
-https://www.reuters.com
+# Technology / AI focused feeds
+https://techcrunch.com/feed/
+https://venturebeat.com/feed/
+https://www.technologyreview.com/feed/
+https://feeds.feedburner.com/oreilly/radar/atom
