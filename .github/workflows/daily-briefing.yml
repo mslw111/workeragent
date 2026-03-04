@@ -1,0 +1,43 @@
+name: Daily Intelligence Briefing
+
+on:
+  # Runs every day at 7:00 AM UTC (adjust to your timezone below)
+  schedule:
+    - cron: "0 7 * * *"
+
+  # Also lets you trigger it manually from the GitHub Actions tab
+  workflow_dispatch:
+    inputs:
+      topic:
+        description: "Research topic for the briefing"
+        required: false
+        default: "AI Agents in use"
+
+jobs:
+  run-briefing:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run the briefing
+        env:
+          OPENAI_API_KEY:    ${{ secrets.OPENAI_API_KEY }}
+          SMTP_HOST:         ${{ secrets.SMTP_HOST }}
+          SMTP_PORT:         ${{ secrets.SMTP_PORT }}
+          SMTP_USER:         ${{ secrets.SMTP_USER }}
+          SMTP_APP_PASSWORD: ${{ secrets.SMTP_APP_PASSWORD }}
+          EMAIL_TO:          ${{ secrets.EMAIL_TO }}
+        run: |
+          TOPIC="${{ github.event.inputs.topic || 'AI Agents in use' }}"
+          echo "Running briefing for topic: $TOPIC"
+          python orchestrator.py "$TOPIC"
