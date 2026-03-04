@@ -11,7 +11,7 @@ on:
       topic:
         description: "Research topic for the briefing"
         required: false
-        default: "AI Agents in use"
+        default: "AI Agents in production"
 
 jobs:
   run-briefing:
@@ -38,6 +38,6 @@ jobs:
           SMTP_APP_PASSWORD: ${{ secrets.SMTP_APP_PASSWORD }}
           EMAIL_TO:          ${{ secrets.EMAIL_TO }}
         run: |
-          TOPIC="${{ github.event.inputs.topic || 'AI Agents in use' }}"
+          TOPIC="${{ github.event.inputs.topic || 'AI Agents in production' }}"
           echo "Running briefing for topic: $TOPIC"
           python orchestrator.py "$TOPIC"

@@ -1,10 +1,37 @@
 # sources.txt
-# Add one URL per line. Lines starting with # are ignored.
-# Use direct RSS feed URLs for best results — especially when running
-# from cloud servers (GitHub Actions) where news homepages may block requests.
+# Credible tech and AI-focused sources with reliable RSS feeds.
+# One URL per line. Lines starting with # are ignored.
 
-# Technology / AI focused feeds
-https://techcrunch.com/feed/
-https://venturebeat.com/feed/
+# ── Peer-reviewed / Academic Research ─────────────────────────────────────────
+# ArXiv daily AI papers (cs.AI category — preprints from researchers worldwide)
+https://arxiv.org/rss/cs.AI
+
+# Stanford Human-Centered AI Institute
+https://hai.stanford.edu/news/feed
+
+# ── Premium Tech Journalism ────────────────────────────────────────────────────
+# Wired — AI coverage
+https://www.wired.com/feed/category/artificial-intelligence/latest/rss
+
+# MIT Technology Review
 https://www.technologyreview.com/feed/
-https://feeds.feedburner.com/oreilly/radar/atom
+
+# IEEE Spectrum — engineering and applied technology
+https://spectrum.ieee.org/rss/fulltext
+
+# Ars Technica — technology and science reporting
+https://feeds.arstechnica.com/arstechnica/technology-lab
+
+# ── Business / Startup Intelligence ───────────────────────────────────────────
+# Crunchbase News — funding rounds, company news, market moves
+https://news.crunchbase.com/feed/
+
+# VentureBeat — AI and enterprise technology
+https://venturebeat.com/category/ai/feed/
+
+# TechCrunch — AI section
+https://techcrunch.com/category/artificial-intelligence/feed/
+
+# ── Industry Research ──────────────────────────────────────────────────────────
+# Google Research Blog
+https://blog.research.google/feeds/posts/default
