@@ -1,0 +1,28 @@
+# Credentials — never bake into the image
+.env
+
+# Python cache
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Runtime data
+*.db
+data/
+
+# Version control
+.git/
+.gitignore
+
+# OS artefacts
+.DS_Store
+Thumbs.db
+
+# Docs / misc
+*.docx
+*.md

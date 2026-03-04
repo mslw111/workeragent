@@ -1,0 +1,8 @@
+# sources.txt
+# Add one URL per line.
+# Lines starting with # are ignored.
+# Example entries — replace with your own sources:
+
+https://www.bbc.com/news
+https://apnews.com
+https://www.reuters.com
